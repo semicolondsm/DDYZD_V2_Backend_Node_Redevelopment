@@ -27,6 +27,7 @@
     "@nestjs/platform-express": "^8.0.0",
     "@nestjs/typeorm": "^8.0.2",
     "@octokit/core": "^3.5.1",
+    "dotenv": "^8.6.0",
     "mysql2": "^2.3.3",
     "passport-jwt": "^4.0.0",
     "reflect-metadata": "^0.1.13",
