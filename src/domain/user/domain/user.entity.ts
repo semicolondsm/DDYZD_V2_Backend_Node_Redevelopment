@@ -1,5 +1,5 @@
-import { ClubHead } from 'src/domain/club/domain/club-head/club-head.entity';
-import { ClubMember } from 'src/domain/club/domain/club-member/club-member.entity';
+import { ClubHead } from 'src/domain/club/domain/head/club-head.entity';
+import { ClubMember } from 'src/domain/club/domain/member/club-member.entity';
 import { ClubFollow } from 'src/domain/club/domain/follow/club-folow.entity';
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 

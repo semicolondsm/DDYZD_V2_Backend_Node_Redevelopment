@@ -1,5 +1,5 @@
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
-import { ClubHasTag } from '../club-tag/club-tag.entity';
+import { ClubHasTag } from '../hastag/club-tag.entity';
 
 @Entity('tag')
 export class Tag {

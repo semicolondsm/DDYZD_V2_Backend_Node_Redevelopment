@@ -5,9 +5,9 @@ import {
     OneToOne,
     PrimaryGeneratedColumn,
 } from 'typeorm';
-import { ClubHead } from './club-head/club-head.entity';
-import { ClubMember } from './club-member/club-member.entity';
-import { ClubHasTag } from './club-tag/club-tag.entity';
+import { ClubHead } from './head/club-head.entity';
+import { ClubMember } from './member/club-member.entity';
+import { ClubHasTag } from './hastag/club-tag.entity';
 import { ClubFollow } from './follow/club-folow.entity';
 import { Major } from './major/major.entity';
 
