@@ -13,7 +13,7 @@ import { ModifyUserBiodDto, ModifyUserGitHubIdDto, ProvideUserTokenDto } from "s
 import { JwtGuardFactory } from 'src/global/jwt/jwt-guard-factory';
 import { UserName } from 'src/global/jwt/jwt.decorator';
 
-@Controller('user')
+@Controller('users')
 export class UserController {
     constructor(private readonly userService: UserService) {}
 
