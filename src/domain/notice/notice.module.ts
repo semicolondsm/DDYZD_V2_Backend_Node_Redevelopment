@@ -3,7 +3,7 @@ import { NoticeController } from './notice.controller';
 import { NoticeService } from './notice.service';
 
 @Module({
-  controllers: [NoticeController],
-  providers: [NoticeService]
+    controllers: [NoticeController],
+    providers: [NoticeService],
 })
 export class NoticeModule {}
