@@ -1,5 +1,6 @@
 import { UnauthorizedException } from '@nestjs/common';
-import { Axios, AxiosResponse } from 'axios';
+import axios from 'axios';
+import { AxiosResponse } from "axios";
 import { UserInformation } from './types/dsmauth';
 
 export class DsmAuthClient {
@@ -10,11 +11,9 @@ export class DsmAuthClient {
 
     public static readonly DSM_AUTH_URL = 'https://developer-api.dsmkr.com';
 
-    private readonly axios: Axios = new Axios();
-
     public async getDsmAuthUserToken(code: string): Promise<string> {
         try {
-            const response = await this.axios.post(
+            const response = await axios.post(
                 `${DsmAuthClient.DSM_AUTH_URL}/dsmauth/token`,
                 {
                     client_id: this.client_id,
@@ -24,7 +23,7 @@ export class DsmAuthClient {
             );
             return response.data['access_token'];
         } catch (err) {
-            throw new UnauthorizedException(err.response);
+            throw new UnauthorizedException(err.message);
         }
     }
 
@@ -33,7 +32,7 @@ export class DsmAuthClient {
     ): Promise<UserInformation> {
         try {
             const response: AxiosResponse<UserInformation> =
-                await this.axios.get(
+                await axios.get(
                     `${DsmAuthClient.DSM_AUTH_URL}/v1/info/basic`,
                     {
                         headers: {
@@ -43,7 +42,7 @@ export class DsmAuthClient {
                 );
             return response.data;
         } catch (err) {
-            throw new UnauthorizedException(err.name);
+            throw new UnauthorizedException(err.message);
         }
     }
 }
