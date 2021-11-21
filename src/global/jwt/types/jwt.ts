@@ -6,4 +6,5 @@ export type JwtPayload = {
     nbf?: number | undefined;
     iat?: number | undefined;
     jti?: string | undefined;
+    type: 'access' | 'refresh';
 };

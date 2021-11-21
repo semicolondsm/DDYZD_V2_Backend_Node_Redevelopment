@@ -10,7 +10,9 @@ export class BasicVerifyTokenGuard extends VerifyTokenGuard {
         if (!request.headers['authorization']) {
             return false;
         }
-        request.user = await this.validateToken(request.headers.authorization);
-        return true;
+        const payload = await this.validateToken(request.headers.authorization);
+        request.user = payload;
+
+        return payload.type === 'access';
     }
 }
