@@ -5,6 +5,6 @@ WORKDIR /home/node/app
 COPY . .
 
 RUN npm install
-RUN npx tsc
+RUN npm run build
 
 CMD ["npm", "run", "start:prod"]
