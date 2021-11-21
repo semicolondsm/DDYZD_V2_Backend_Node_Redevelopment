@@ -28,7 +28,10 @@ export class UserController {
     }
 
     @Get('/refresh')
-    public refresh() {}
+    @UseGuards(JwtGuardFactory.createJwtGuard('REFRESH'))
+    public refresh(@UserName() user_id: number, @Headers("refresh-token") refresh_token: string) {
+        return this.userService.refreshToken(user_id, refresh_token.substring(7));
+    }
 
     @Get('/profile')
     @UseGuards(JwtGuardFactory.createJwtGuard('REQUIRED'))
