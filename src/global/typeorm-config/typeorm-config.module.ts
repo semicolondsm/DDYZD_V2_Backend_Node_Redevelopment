@@ -12,6 +12,8 @@ export const getTypeOrmModuleOptions = (
     username: environmentConfigService.get('PRODUCTION_USERNAME'),
     password: environmentConfigService.get('PRODUCTION_PASSWORD'),
     database: environmentConfigService.get('PRODUCTION_DATABASE'),
+    synchronize: false,
+    entities: ['./dist/**/*.entity.js'],
 });
 
 @Module({
