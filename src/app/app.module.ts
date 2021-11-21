@@ -1,9 +1,11 @@
 import { Module } from '@nestjs/common';
 import { AppController } from 'src/app/app.controller';
 import { AppService } from 'src/app/app.service';
+import { TypeormConfigModule } from 'src/global/typeorm-config/typeorm-config.module';
+import { ClubModule } from 'src/domain/club/club.module';
 
 @Module({
-    imports: [],
+    imports: [TypeormConfigModule, ClubModule],
     controllers: [AppController],
     providers: [AppService],
 })
